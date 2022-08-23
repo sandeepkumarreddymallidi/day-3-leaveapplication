@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>employee register page</title>
+    </head>
+    <style>
+        table{
+            width: 50%;
+            background-color:white;
+        }
+        tr td{
+            padding: 10px;
+            margin-top: 10px;
+        }
+        input{
+            border: none;
+        }
+        .x{
+            width: 80%;
+            padding: 10px;
+        }
+    </style>
+    <script>
+            function f1(){
+               var d1= document.getElementById("dateid1").value;
+               var d2= document.getElementById("dateid2").value;
+               var date1=new Date(d1);
+               var date2=new Date(d2);
+               var time_difference=date2.getTime()-date1.getTime();
+               var time=time_difference/(1000*60*60*24);
+
+                document.getElementById("num").value=time;
+            }
+        </script>
+        <body bgcolor="wheat" align="center">
+            <h1>leave application form</h1>
+            <form action="./leaveapply.jsp" method="post" >
+                <table border="2" align="center" >
+                <tr><td >eid:</td>
+                    <td><input type="number" name="eid" placeholder="enter your employee id" class="x" ></td></tr>
+                <tr ><td >Name:</td>
+                    <td><input type="text" name="ename" placeholder="enter your name" class="x" ></td>
+                </tr><tr>
+                    <td >email:</td>
+                    <td><input type="text" name="eemail" placeholder="enter your email" class="x"></td>
+                </tr><tr>
+                    <td >phone:</td>
+                    <td><input type="text" name="ephonenumber" placeholder="enter your phone" class="x"></td>
+                </tr><tr>
+                    <td >age:</td>
+                    <td><input type="number" name="eage" placeholder="enter your age" class="x" ></td>
+                </tr><tr>
+                    <td >dept:</td>
+                    <td><input type="text" name="edept" placeholder="enter your department" class="x"></td>
+                </tr><tr>
+                    <td >leave from:</td>
+                    <td><input type="date" name="eform" id="dateid1" class="x"></td>
+                </tr><tr>
+                    <td >leave to:</td>
+                    <td><input type="date" name="eto"  id="dateid2" class="x" onchange="f1()"></td>
+                </tr>
+                <tr>
+                    <td >no of days:</td>
+                    <td><input type="number" name="nod" id="num" class="x"></td>
+                </tr>
+                <tr>
+                    <td >reason:</td>
+                    <td><input type="text" name="ereason" placeholder="enter your reason" class="x"></td>
+                </tr>
+                <tr>
+                    <td >status:</td>
+                    <td><input type="text" name="estatus" placeholder="please enter (pending)" class="x"></td>
+                </tr>
+                 
+            </table>
+            <input type="submit" value="apply" id="btn">
+            </form>
+        </body>
+</html>
